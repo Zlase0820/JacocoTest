@@ -1,6 +1,5 @@
 package com.example.jacocospringtestpro.controller;
 
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,6 +22,23 @@ public class Controller1 {
     private String getController2() {
         int i = 10;
         i = ++i;
+        return "abc" + i;
+    }
+
+    @GetMapping("controller3")
+    public String controller3() {
+        return "OK3";
+    }
+
+
+    @GetMapping("controller4")
+    public String controller4() {
+        return getController4();
+    }
+
+    private String getController4() {
+        int i = 1000000;
+        i = i + 123;
         return "abc" + i;
     }
 }
